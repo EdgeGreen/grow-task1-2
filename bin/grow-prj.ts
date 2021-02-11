@@ -28,7 +28,7 @@ const sgStack = new SG(app, sgStackConf.stackName, {
         region: sgStackConf.region 
     },
 
-    importedVpc: vpcStack.importedVPC,
+    importedVpc: vpcStack.exportedVPC,
 });
 
 //------------------------------------------------------------------------------------------------------------
@@ -39,7 +39,7 @@ const asgStack = new ASG(app, asgStackConf.stackName, {
         region: asgStackConf.region 
     },
 
-    importedVpc: vpcStack.importedVPC,
+    importedVpc: vpcStack.exportedVPC,
 
     importedAsgSecurityGroup: sgStack.appSecurityGroup,
 
@@ -54,7 +54,7 @@ const albStack = new ALB(app, albStackConf.stackName, {
         region: albStackConf.region 
     },
 
-    importedVpc: vpcStack.importedVPC,
+    importedVpc: vpcStack.exportedVPC,
 
     importedAlbSecurityGroup: sgStack.albSecurityGroup,
 

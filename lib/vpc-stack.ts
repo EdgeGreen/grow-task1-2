@@ -9,7 +9,7 @@ import {vpcStackConf} from './configuration/stacks-conf';
 //------------------------------------------------------------------------------------------------------------
 export class VPC extends BaseStack {
 
-    public readonly importedVPC: Vpc;
+    public readonly exportedVPC: Vpc;
     
     constructor(scope: Construct, id: string, props?: StackProps) {
       super(scope, id, props);
@@ -17,7 +17,7 @@ export class VPC extends BaseStack {
 //------------------------------------------------------------------------------------------------------------
 // *** VIRTUAL PRIVATE CLOUD ***
 //------------------------------------------------------------------------------------------------------------        
-this.importedVPC = new Vpc(this, vpcStackConf.vpcName, {
+this.exportedVPC = new Vpc(this, vpcStackConf.vpcName, {
 
     cidr: '10.0.0.0/16',
     maxAzs: 2,

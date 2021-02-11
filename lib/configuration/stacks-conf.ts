@@ -1,6 +1,6 @@
 import { appendFile } from "fs";
 
-const namePrefix = 'GrowPrj';
+const namePrefix = 'growPrj';
 
 
 export const baseStackConf = {
