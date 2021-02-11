@@ -23,7 +23,7 @@ this.importedVPC = new Vpc(this, vpcStackConf.vpcName, {
     maxAzs: 2,
     enableDnsHostnames: true,
     enableDnsSupport: true,
-    natGateways: 0,
+    natGateways: 2,
 
 //------------------------------------------------------------------------------------------------------------
 // *** PUBLIC SUBNETS ***
@@ -39,7 +39,7 @@ this.importedVPC = new Vpc(this, vpcStackConf.vpcName, {
 // *** PRIVATE SUBNETS ***
 //------------------------------------------------------------------------------------------------------------              
       { 
-        subnetType: SubnetType.ISOLATED,
+        subnetType: SubnetType.PRIVATE,
         name: vpcStackConf.privateSubnetsName,
         cidrMask: 24,     
       }

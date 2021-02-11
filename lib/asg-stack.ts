@@ -45,7 +45,7 @@ this.app = new autoscaling.AutoScalingGroup(this, asgStackConf.appName, {
       maxCapacity: 6,
       vpc: props.importedVpc,
       vpcSubnets: {
-        subnetType: ec2.SubnetType.PUBLIC
+        subnetType: ec2.SubnetType.PRIVATE
       },
       instanceType: ec2.InstanceType.of(ec2.InstanceClass.BURSTABLE2, ec2.InstanceSize.MICRO),
       machineImage: ec2.MachineImage.genericLinux({'us-east-1': 'ami-0885b1f6bd170450c'}),
